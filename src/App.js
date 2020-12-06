@@ -1,18 +1,17 @@
 import React, { useState } from "react";
 import "./styles.css";
 
+var shoppingList = ["milk", "sugar", "candy"];
+
 export default function App() {
-  var [userInput, setUserInput] = useState("");
-
-  function inputChangeHandler(event) {
-    setUserInput(event.target.value);
-  }
-
   return (
     <div className="App">
       <h1>inside outt!</h1>
-      <input onChange={inputChangeHandler}></input>
-      <div>Welcome {userInput}</div>
+      <ul>
+        {shoppingList.map((item) => {
+          return <li> {item} </li>;
+        })}
+      </ul>
     </div>
   );
 }
