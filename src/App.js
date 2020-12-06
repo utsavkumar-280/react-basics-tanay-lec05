@@ -1,21 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import "./styles.css";
 
-var headingHtml = "Utsav";
-var pcolor = "red";
-var clicks = 0;
-
 export default function App() {
+  const [likecounter, setLikeCounter] = useState(0);
+
   function likeClickHandler() {
-    console.log("clicked!");
-    clicks = clicks + 1;
-    console.log("current likes=", clicks);
+    var newlikecounter = likecounter + 1;
+    setLikeCounter(newlikecounter);
   }
 
   return (
     <div className="App">
-      <h1 style={{ background: pcolor }}>Welcome {headingHtml}</h1>
-      <button onClick={likeClickHandler}> Like me! </button>
+      <h1>inside outt!</h1>
+      <button onClick={likeClickHandler}> Like Me! </button> {likecounter}
     </div>
   );
 }
+
+/**
+ * things to notice
+ * class --> className
+ * style --> takes an object instead of ""
+ */
