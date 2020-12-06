@@ -3,10 +3,13 @@ import "./styles.css";
 
 var headingHtml = "Utsav";
 var pcolor = "red";
+var clicks = 0;
 
 export default function App() {
   function likeClickHandler() {
     console.log("clicked!");
+    clicks = clicks + 1;
+    console.log("current likes=", clicks);
   }
 
   return (
